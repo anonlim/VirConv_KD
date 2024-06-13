@@ -41,7 +41,8 @@ def train_one_epoch(model, optimizer, train_loader, model_func, lr_scheduler, ac
 
         model.train()
 
-        loss, tb_dict, disp_dict = model_func(model, batch)
+        # loss, tb_dict, disp_dict = model_func(model, batch)
+        loss, tb_dict, disp_dict, feat = model_func(model, batch)
         loss = loss/accus
         
         loss.backward()
